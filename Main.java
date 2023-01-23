@@ -10,3 +10,7 @@ Hoja de Trabajo 2
 Curso: Algoritmos y Estructuras de datos
 Sección: 20
 */
+
+public class Main {
+    
+}
