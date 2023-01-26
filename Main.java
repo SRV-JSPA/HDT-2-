@@ -1,6 +1,6 @@
 /*
 Profesor: Douglas Leonel Barrios
-Auxiliar: Fernanda Esquivel y Francisco Castillo
+Auxiliares: Fernanda Esquivel y Francisco Castillo
 INTEGRANTES: 
 José Santiago Pereira Alvarado, 22318
 Gustavo Adolfo Cruz Bardales, 22779

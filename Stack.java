@@ -1,6 +1,6 @@
 /*
 Profesor: Douglas Leonel Barrios
-Auxiliar: Fernanda Esquivel y Francisco Castillo
+Auxiliares: Fernanda Esquivel y Francisco Castillo
 INTEGRANTES: 
 José Santiago Pereira Alvarado, 22318
 Gustavo Adolfo Cruz Bardales, 22779
@@ -14,11 +14,6 @@ Sección: 20
 import java.util.EmptyStackException;
 
 public interface Stack <Integer> {
-  
-
-
-
-
 
 /**
  * Stack
@@ -43,7 +38,7 @@ public interface Stack <Integer> {
     * @return the element in the top of the stack.
     * @throws EmptyStackException If the stack is empty.
     */
-   public E pop() throws EmptyStackException;
+   public Integer pop() throws EmptyStackException;
 
    /**
     * pre: stack is not empty

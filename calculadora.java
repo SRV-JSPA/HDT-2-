@@ -1,6 +1,6 @@
 /*
 Profesor: Douglas Leonel Barrios
-Auxiliar: Fernanda Esquivel y Francisco Castillo
+Auxiliares: Fernanda Esquivel y Francisco Castillo
 INTEGRANTES: 
 José Santiago Pereira Alvarado, 22318
 Gustavo Adolfo Cruz Bardales, 22779
@@ -14,7 +14,7 @@ Sección: 20
 import java.util.*;
 import java.util.Map.Entry;
 
-public class calculadora implements StackVector {
+public class calculadora implements Stack{
    
     protected Vector <Integer> data;
 
@@ -25,7 +25,7 @@ public class calculadora implements StackVector {
 
   
 
-    public StackVector(){
+    public  void StackVector(){
     data = new Vector<Integer>();
     }
 
@@ -33,9 +33,22 @@ public class calculadora implements StackVector {
         
     }
 
+    @Override
+    public void add(Object item) {
+        // TODO Auto-generated method stub
+        
+    }
 
+    @Override
+    public void push(Object item) {
+        // TODO Auto-generated method stub
+        
+    }
 
+    @Override
+    public Object pop() throws EmptyStackException {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
-
-    
 }
