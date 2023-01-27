@@ -11,18 +11,51 @@ Curso: Algoritmos y Estructuras de datos
 Sección: 20
 */
 
-import java.util.*;
-import java.util.Map.Entry;
 
-public class calculadora implements Stack{
-   
-    protected Vector <Integer> data;
+public class calculadora implements InterfazCalcu {
+    
 
-    Scanner in = new Scanner(System.in);
+    public calculadora() {
+        Stack s = new Stack();
+    }
 
-    Stack<Integer> s = new Stack<Integer>();
+  
 
-     public String leerArchivo() throws FileNotFoundException {
+    public Double parsear(String caracter) {
+        return Double.parseDouble(caracter);
+    }
+
+    public double evaluate(String c) {
+       
+        int len = caracter.length();
+        Double resultado = 0.0;
+        for (int i = 0; i < len; i++) {
+            char cContexto = expresion.charAt(i);
+
+            String comando = String.valueOf(cContexto);
+            if (cContexto != '\n') {
+                if (Character.isDigit(cContexto)) {
+
+                    stack.push(parsear(comando));
+                } else {
+                    double a = stack.pop(), b = stack.pop();
+                    if(cContexto=='+'){resultado=a+b;}else if(cContexto=='-'){resultado=a-b;}else if(cContexto=='*'){resultado=a*b;}else if(cContexto=='/'){if(b!=0){a/b}else{throw new ArithmeticException()}}
+
+            
+                    stack.push(resultado);
+                }
+            }
+        }
+
+        return stack.pop();
+    }
+
+    public double getPrevious() {
+        return 0.0;
+    }
+
+
+    public String leerArchivo() throws FileNotFoundException {
 		// Aqui se indica la ubicacion y nombre de archivo.txt
 		File lec = new File("/ubicacion/nombrearchivo.txt");
 		Scanner sc = new Scanner(lec);
@@ -32,32 +65,6 @@ public class calculadora implements Stack{
 		}
 		return"";
 	}
-  
 
-    public  void StackVector(){
-    data = new Vector<Integer>();
-    }
-
-    public void add (Integer item){
-        
-    }
-
-    @Override
-    public void add(Object item) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public void push(Object item) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public Object pop() throws EmptyStackException {
-        // TODO Auto-generated method stub
-        return null;
-    }
 
 }
