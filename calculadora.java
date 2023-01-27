@@ -12,22 +12,27 @@ Sección: 20
 */
 
 
+import java.util.*;
+
+
 public class calculadora implements InterfazCalcu {
-    
+    stacks stack = null;
 
     public calculadora() {
-        Stack s = new Stack();
+        stack = new stacks();
     }
 
-  
+    public String quitarEspacios(String cadena) {
+        return cadena.replace(" ", "");
+    }
 
-    public Double parsear(String caracter) {
-        return Double.parseDouble(caracter);
+    public Double parsear(String expresion) {
+        return Double.parseDouble(expresion);
     }
 
     public double evaluate(String c) {
-       
-        int len = caracter.length();
+        String expresion = quitarEspacios(c);
+        int len = expresion.length();
         Double resultado = 0.0;
         for (int i = 0; i < len; i++) {
             char cContexto = expresion.charAt(i);
@@ -53,18 +58,4 @@ public class calculadora implements InterfazCalcu {
     public double getPrevious() {
         return 0.0;
     }
-
-
-    public String leerArchivo() throws FileNotFoundException {
-		// Aqui se indica la ubicacion y nombre de archivo.txt
-		File lec = new File("/ubicacion/nombrearchivo.txt");
-		Scanner sc = new Scanner(lec);
-		while (sc.hasNext()) 
-		{
-			System.out.println(sc.nextLine());
-		}
-		return"";
-	}
-
-
 }
