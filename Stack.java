@@ -11,19 +11,52 @@ Curso: Algoritmos y Estructuras de datos
 Sección: 20
 */
 
-import java.util.EmptyStackException;
+import java.util.*;
 
-public interface Stack <Integer> {
+public class Stack implements InterfazStack {
 
-/**
- * Stack
- * 
- * Interface que representa a un Stack.
- */
+    Stack s = new Stack();
 
-    double evaluate(final String p0) throws ArithmeticException;
-	    
-	double getPrevious();
+    ArrayList<Double> list = new ArrayList<Double>();
+    
+    public void push(Integer elemento){
+        s.push(elemento);
+    }
+
+    public Integer pop () throws EmptyStackException{
+        if(empty()){
+            System.out.println("La pila esta vacia");
+            return null;
+        }else{
+            Double x=list.get(list.size()-1);
+            list.remove(list.size()-1);
+            return x;
+        }
+       
+    }
+
+    public Integer peek() throws EmptyStackException{
+        if (empty()){
+            return true;
+
+        } else{
+            Double x=list.get(list.size()-1);
+            return x;
+        }
+        
+    }
+
+    public boolean empty (){
+        if(list == 0){
+            return true;
+        }else{
+           return false;
+        }
+    }
+
+    public int size(){
+        return list.size();
+    }
 
 
 }
