@@ -22,7 +22,16 @@ public class calculadora implements Stack{
 
     Stack<Integer> s = new Stack<Integer>();
 
-
+     public String leerArchivo() throws FileNotFoundException {
+		// Aqui se indica la ubicacion y nombre de archivo.txt
+		File lec = new File("/ubicacion/nombrearchivo.txt");
+		Scanner sc = new Scanner(lec);
+		while (sc.hasNext()) 
+		{
+			System.out.println(sc.nextLine());
+		}
+		return"";
+	}
   
 
     public  void StackVector(){
