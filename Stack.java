@@ -13,50 +13,48 @@ Sección: 20
 
 import java.util.*;
 
-public class Stack implements InterfazStack {
 
-    Stack s = new Stack();
+public class calculadora implements InterfazCalcu {
+    stacks stack = null;
 
-    ArrayList<Double> list = new ArrayList<Double>();
-    
-    public void push(Integer elemento){
-        s.push(elemento);
+    public calculadora() {
+        stack = new stacks();
     }
 
-    public Integer pop () throws EmptyStackException{
-        if(empty()){
-            System.out.println("La pila esta vacia");
-            return null;
-        }else{
-            Double x=list.get(list.size()-1);
-            list.remove(list.size()-1);
-            return x;
+    public String quitarEspacios(String cadena) {
+        return cadena.replace(" ", "");
+    }
+
+    public Double parsear(String expresion) {
+        return Double.parseDouble(expresion);
+    }
+
+    public double evaluate(String c) {
+        String expresion = quitarEspacios(c);
+        int len = expresion.length();
+        Double resultado = 0.0;
+        for (int i = 0; i < len; i++) {
+            char cContexto = expresion.charAt(i);
+
+            String comando = String.valueOf(cContexto);
+            if (cContexto != '\n') {
+                if (Character.isDigit(cContexto)) {
+
+                    stack.push(parsear(comando));
+                } else {
+                    double a = stack.pop(), b = stack.pop();
+                    if(cContexto=='+'){resultado=a+b;}else if(cContexto=='-'){resultado=a-b;}else if(cContexto=='*'){resultado=a*b;}else if(cContexto=='/'){if(b!=0){a/b}else{throw new ArithmeticException()}}
+
+            
+                    stack.push(resultado);
+                }
+            }
         }
-       
+
+        return stack.pop();
     }
 
-    public Integer peek() throws EmptyStackException{
-        if (empty()){
-            return true;
-
-        } else{
-            Double x=list.get(list.size()-1);
-            return x;
-        }
-        
+    public double getPrevious() {
+        return 0.0;
     }
-
-    public boolean empty (){
-        if(list == 0){
-            return true;
-        }else{
-           return false;
-        }
-    }
-
-    public int size(){
-        return list.size();
-    }
-
-
 }
